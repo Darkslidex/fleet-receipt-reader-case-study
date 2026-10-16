@@ -10,7 +10,13 @@
 
 ## The problem
 
-Fleet repair costs were typed by hand into a spreadsheet that had grown over many years. It depended on one person, data entry was slow and error-prone, and nobody could analyze the spend by vehicle, supplier or category with confidence.
+Fleet repair costs had been typed by hand into a spreadsheet for 17 years. It depended on one person, data entry was slow and error-prone, and **only the typed numbers remained: the invoice itself was never kept**, so no record could be checked against its source. Nobody could analyze the spend by supplier or category with confidence.
+
+## What changed
+
+- **Every record now has its evidence.** The invoice photo is stored with the record, and the fields the reader located are highlighted on the photo for review. Photos of confirmed records are never purged.
+- **17 years of history became usable data.** The full repair history was migrated, reconciled with zero differences, and now feeds the same KPI views as new records.
+- **Metrics that did not exist before.** KPI views built on top of the full history and the new captures, by supplier and category, plus a single Excel workbook that refreshes itself.
 
 ## The solution
 
@@ -69,14 +75,14 @@ About 3 seconds per photo, at a cost in the order of USD 0.0003 per read. The AI
 
 - **2,300+ automated test functions:** unit, integration, UI (Playwright), structural and slow tests.
 - **Spec-driven development:** project constitution, a spec in EARS notation with acceptance criteria, ADRs, a plan, tasks and test-first implementation.
-- **Lossless migration:** the full repair history was imported and reconciled by unit and year with zero differences. Corrections are recorded as audited reversals, never silent edits.
+- **Lossless migration:** 17 years of repair history were imported and reconciled by unit and year with zero differences. Corrections are recorded as audited reversals, never silent edits.
 - **User acceptance:** an on-site session with end users on real invoices; the findings shipped in the following releases.
 
 ## Results
 
 - **From planning to production in 3 days**, then continuous improvement over the following weeks.
 - **Excel deliverable optimized:** download size from 7.8 MB to 0.9 MB, and reopening time from 166.7 s to about 16 s.
-- **One source of truth** for repair spend, no longer dependent on a single person.
+- **One source of truth** for repair spend, backed by the invoice photo and no longer dependent on a single person.
 
 ## Lessons learned
 
